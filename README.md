@@ -14,4 +14,18 @@ The following variable names are used:
 <li>L - A convenience to encapsulate K as an array of word-sized values rather than byte-sized </li>
 </ul>
 
+<h2>How does it work</h2>
+
+```ruby
+key = 'some_string_for_key'
+ob = RC5.new(key)
+text = 'some_text_to_be_encrypted'
+enc = ob.encypt_text(text)    
+puts enc                #==> l�@������K���^ڨ���"���
+dec = ob.decrypt_text(enc)
+puts dec                #==> some_text_to_be_encrypted
+
+```
+
 Algorithm was taken from <a href = 'https://github.com/tbb/pyRC5/blob/master/RC5.py'> github project </a> and rebuilt into Ruby.
+
